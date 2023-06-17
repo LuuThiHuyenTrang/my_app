@@ -1,0 +1,19 @@
+import instance from "./instance";
+import { projectList } from "./../dataFake";
+
+const getAll = () => {
+  return instance.get("/projectList");
+};
+const getOne = (id) => {
+  return instance.get(`/projectList/${id}`);
+};
+const remove = (id) => {
+  return instance.delete(`/projectList/${id}`);
+};
+const add = (project) => {
+  return instance.post(`/projectList/`, project);
+};
+const update = (project) => {
+  return instance.put(`/projectList/${project.id}`, project);
+};
+export { getAll, getOne, add, update, remove };
